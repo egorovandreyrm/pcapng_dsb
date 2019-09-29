@@ -6,7 +6,6 @@ Decryption Secrets block is effectively is a key log file embedded in a pcapng f
 
 Pcapng file format document can be download on https://github.com/pcapng/pcapng
 
-To support the feature in my android application, I developed a simple lib for writing pcapng blocks, that has only 4 functions. The lib can be found here: https://github.com/egorovandreyrm/pcapng_dsb
-An example of using the lib is included.
+To support the feature in my android application, I developed a simple lib for writing pcapng blocks, that has only 4 functions. An example of using the lib is included.
 
 Additional details can be found on https://egorovandreyrm.com/pcapng-decryption-secrets-block/
