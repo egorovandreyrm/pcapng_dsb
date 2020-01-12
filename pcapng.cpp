@@ -213,7 +213,9 @@ size_t pcapng_write_enhanced_packet_block(
     p_enhanced_packet_block->interface_id = 0;
 
     gettimeofday(&tv, NULL);
-    ms_tv = (uint64_t) (tv.tv_sec) * 1000 + (uint64_t) (tv.tv_usec) / 1000;
+
+    // If if_tsresol option is not present, a resolution of 10^-6 is assumed (i.e. timestamps have the same resolution of the standard 'libpcap' timestamps).
+    ms_tv = (uint64_t) (tv.tv_sec) * (uint64_t) 1e6 + (uint64_t) (tv.tv_usec);
 
     p_enhanced_packet_block->timestamp_high = (uint32_t) (ms_tv >> 32);
     p_enhanced_packet_block->timestamp_low = (uint32_t) ms_tv;
